@@ -3,6 +3,7 @@ const fs = require('fs');
 const gpio = require('onoff').Gpio;
 
 const relay = new gpio(17, 'out');
+relay.writeSync(0);
 
 onRequest = (req, res) => {
     console.log('New Request: ' + req.url);
