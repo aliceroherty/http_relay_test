@@ -20,17 +20,14 @@ onRequest = (req, res) => {
         const lamp = {
             on: () => {
                 relay.writeSync(1);
-                status = 'on';
                 console.log('The relay is now on.');
             },
             off: () => {
                 relay.writeSync(0);
-                status = 'off';
                 console.log('The relay is now off.');
             },
-            status: 'off',
         }
-        if (lamp.status === 'off') {
+        if (relay.readSync(0)) {
             lamp.on();
         }
         else {
