@@ -2,7 +2,7 @@ const http = require('http');
 const fs = require('fs');
 const gpio = require('onoff').Gpio;
 
-const relay = new gpio(17, 'out');
+const relay = new gpio(27, 'out');
 relay.writeSync(0);
 
 onRequest = (req, res) => {
