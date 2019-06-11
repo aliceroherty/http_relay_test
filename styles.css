@@ -1,0 +1,30 @@
+body {
+    background-color: #7caaf4;
+    text-align: center;
+}
+form {
+    border: 5px solid black;
+    border-radius: 5em;
+    background-color: white;
+    padding: 2em;
+    width: 70%;
+    margin: auto;
+}
+h1 {
+    margin: 0;
+    font-size: 4em;
+}
+p {
+    font-size: 2em;;
+}
+input {
+    width: 50%;
+    background-color: #7caaf4;
+    text-align: center;
+    border: solid 2px black;
+    border-radius: 2em;
+    padding: 15px;
+    font-size: 1em;
+    font-weight: bold;
+    height: 8em;
+}
