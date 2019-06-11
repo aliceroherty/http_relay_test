@@ -27,7 +27,7 @@ onRequest = (req, res) => {
                 console.log('The relay is now off.');
             },
         }
-        if (relay.readSync(0)) {
+        if (relay.readSync() === 0) {
             lamp.on();
         }
         else {
