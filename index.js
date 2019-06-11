@@ -2,6 +2,8 @@ const http = require('http');
 const fs = require('fs');
 const gpio = require('onoff').Gpio;
 
+const relay = new gpio(17, 'out');
+
 onRequest = (req, res) => {
     console.log('New Request: ' + req.url);
     if (req.url === '/') {
@@ -19,15 +21,14 @@ onRequest = (req, res) => {
             on: () => {
                 relay.writeSync(1);
                 status = 'on';
-                console.log('The lamp is now on.');
+                console.log('The relay is now on.');
             },
             off: () => {
                 relay.writeSync(0);
                 status = 'off';
-                console.log('The lamp is now off.');
+                console.log('The relay is now off.');
             },
             status: 'off',
-            relay: new gpio(17, 'out'),
         }
         if (lamp.status === 'off') {
             lamp.on();
